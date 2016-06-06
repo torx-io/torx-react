@@ -1,4 +1,4 @@
-# [VentureBeat](http://torx.io) Node.js Style Guide() {
+# [TorxIO](http://torx.io) Node.js Style Guide() {
 
 ### Most of the content is taken from the [RisingStack styleguide](https://github.com/RisingStack/node-style-guide)
 
