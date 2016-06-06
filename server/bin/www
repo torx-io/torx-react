@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+var app               = require('../app');
+var http              = require('http');
+var https             = require('https');
+var config            = require('../../config');
+var fs                = require('fs');
+var path              = require('path');
+
+// SSL configuration
+// var options = {
+//   key: fs.readFileSync(path.join(__dirname, '../', config.ssl.key)),
+//   //ca: [ fs.readFileSync(config.ssl.ca) ],
+//   cert: fs.readFileSync(path.join(__dirname, '../', config.ssl.cert))
+// };
+
+app.set('port', process.env.PORT || 3000);
+app.set('port_ssl', process.env.PORT_SSL || 3443);
+
+// Create http server
+var httpServer = http.createServer(app);
+var serverInsecure = httpServer.listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + serverInsecure.address().port);
+});
+
+// Create https server
+// var httpsServer = https.createServer(options, app);
+// var serverSecure = httpsServer.listen(app.get('port_ssl'), function() {
+//   console.log('Express secure server listening on port ' + serverSecure.address().port);
+// });

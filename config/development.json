@@ -1,0 +1,11 @@
+{
+  "encryptionKey": "s9$/adBxbt_21r*.{3k_TOV#X`dZQ;lzx&pLI+0Sz*)]c+%8l!mg1]ZjQuA*=Ovq",
+  "ssl": {
+    "useSsl": false,
+    "key": "",
+    "cert": "",
+    "ca": "",
+    "dev": false,
+    "devHost": "app.torx.dev"
+  }
+}

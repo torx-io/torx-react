@@ -1,0 +1,3 @@
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const CHECK_CURRENT_USER = 'CHECK_CURRENT_USER';
+export const TOGGLE_MENU = 'TOGGLE_MENU';

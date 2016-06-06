@@ -1,0 +1,7 @@
+server/apidoc/**
+server/libraries/gigyasdk.js
+server/middleware/**
+server/public/js/URI.js
+server/public/js/jquery.payment.js
+server/public/js/js.cookie.js
+build/main.js

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  div.page-header
+    if( message )
+      h2.page-title= message
+    else
+      h2.page-title Error
+  
+  if( description )
+    div.row
+      div.col-md-6.col-md-offset-2
+        p #{description}
+    
