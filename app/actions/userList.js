@@ -2,6 +2,13 @@ import * as types from '../constants/ActionTypes';
 import fetch from 'isomorphic-fetch';
 import { clearEditingUser } from './user.js';
 
+var usersMock = [
+  {user_id: 0,first_name: 'First', last_name: 'User', email_address: 'user1@test.com'},
+  {user_id: 1,first_name: 'Second', last_name: 'User', email_address: 'user2@test.com'},
+  {user_id: 2,first_name: 'Third', last_name: 'User', email_address: 'user3@test.com'},
+  {user_id: 3,first_name: 'Fourth', last_name: 'User', email_address: 'user4@test.com'}
+];
+
 export function postUser(user) {
   return dispatch => {
     return fetch('/api/v1/users/', {
@@ -33,17 +40,12 @@ export function receiveUsers(users) {
 export function getUsers(filter) {
   return dispatch => {
     dispatch(requestUsers());
-    if (typeof filter !== 'undefined' && filter !== '') {
-      return fetch('/api/v1/users/?search=' + filter)
-        .then(response => response.json())
-        .then(json => dispatch(receiveUsers(json)));
-    } else {
-      return fetch('/api/v1/users')
-        .then(response => response.json())
-        .then(json => dispatch(receiveUsers(json)));
-    }
+    dispatch(receiveUsers(usersMock.filter(function (i,n){
+      return n.email === filter;
+    })));
   };
 }
+
 
 export function putUser(user) {
   return dispatch => {
