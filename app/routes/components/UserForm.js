@@ -23,11 +23,13 @@ export default class UserForm extends Component {
       this.emailAddress.value = '';
     }
   }
+
   handleDelete(e) {
     const { actions, user } = this.props;
     e.preventDefault();
     actions.deleteUser(user);
   }
+
   handleSave(e) {
     const { actions } = this.props;
     e.preventDefault();
@@ -37,6 +39,7 @@ export default class UserForm extends Component {
       email_address: this.emailAddress.value
     });
   }
+
   handleUpdate(e) {
     const { actions, user } = this.props;
     e.preventDefault();
@@ -47,12 +50,15 @@ export default class UserForm extends Component {
     });
     actions.putUser(updatedUser);
   }
+
   updateFirstName(ref) {
     this.firstName = ref;
   }
+
   updateLastName(ref) {
     this.lastName = ref;
   }
+  
   updateEmailAddress(ref) {
     this.emailAddress = ref;
   }
